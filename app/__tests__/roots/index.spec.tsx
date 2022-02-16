@@ -1,11 +1,10 @@
-function returnOne() {
-  return 1;
-}
+import {render, screen} from '@testing-library/react';
+import Index from "../../routes/index";
 
-describe('returnOne', () => {
-  it('should return 1', () => {
-   expect(returnOne()).toEqual(1); 
+describe('home page', () => {
+  it('should contain home page content', () => {
+    render(<Index />);
+    // console.log(expect(screen.getByRole('heading')));
+    expect(screen.getByRole('heading')).toHaveTextContent('Welcome to Remix');
   })
 })
-
-export {}
