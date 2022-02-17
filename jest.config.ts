@@ -9,6 +9,7 @@ const config: Config.InitialOptions = {
     "<rootDir>/public/",
     "<rootDir>/cypress/",
   ],
+  setupFiles: ["<rootDir>/jest-setup.ts"],
   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
 };
 
