@@ -2,20 +2,20 @@ import { API_KEY } from "../../app/constants";
 
 describe("Listing Restaurants", () => {
   it("should show restaurants from the server", () => {
-    const sushiPlace = "Sushi Place";
-    const pizzaPlace = "Pizza Place";
+    const pastaPlace = "Pasta Place";
+    const saladPlace = "Salad Place";
 
     cy.intercept(
       "GET",
       `https://outside-in-dev-api.herokuapp.com/${API_KEY}/restaurants`,
       [
-        { id: 1, name: sushiPlace },
-        { id: 2, name: pizzaPlace },
+        { id: 1, name: pastaPlace },
+        { id: 2, name: saladPlace },
       ]
     );
 
     cy.visit("/");
-    cy.contains(sushiPlace);
-    cy.contains(pizzaPlace);
+    cy.contains(pastaPlace);
+    cy.contains(saladPlace);
   });
 });
