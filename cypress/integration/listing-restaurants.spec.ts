@@ -1,21 +1,13 @@
-import { API_KEY } from "../../app/constants";
-
 describe("Listing Restaurants", () => {
   it("should show restaurants from the server", () => {
-    const pastaPlace = "Pasta Place";
-    const saladPlace = "Salad Place";
-
-    cy.intercept(
-      "GET",
-      `https://outside-in-dev-api.herokuapp.com/${API_KEY}/restaurants`,
-      [
-        { id: 1, name: pastaPlace },
-        { id: 2, name: saladPlace },
-      ]
-    );
+    // mocking at ~/mocks/handlers
+    // const restaurants: Restaurant[] = [
+    //   { id: 1, name: "Sushi Place" },
+    //   { id: 2, name: "Pizza Place" },
+    // ];
 
     cy.visit("/");
-    cy.contains(pastaPlace);
-    cy.contains(saladPlace);
+    cy.contains("Sushi Place");
+    cy.contains("Pizza Place");
   });
 });
