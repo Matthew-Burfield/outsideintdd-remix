@@ -40,7 +40,7 @@ app.listen(port, () => {
   console.log(`Express server listening on port ${port}`);
 });
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === "development") {
   // Run mocking server
   server.listen({ onUnhandledRequest: "error" });
 
@@ -49,4 +49,3 @@ if (process.env.NODE_ENV === 'development') {
   process.once("SIGINT", server.close);
   process.once("SIGTERM", server.close);
 }
-
