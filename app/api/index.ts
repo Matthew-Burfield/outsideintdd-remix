@@ -1,6 +1,6 @@
 import type { Restaurant } from "../routes/index";
 
-const API_KEY = "GqG1qDtzee6CBqSNbjUgU4XmJwb3MlbA";
+export const API_KEY = "GqG1qDtzee6CBqSNbjUgU4XmJwb3MlbA";
 
 export async function loadRestaurants() {
   const response = await fetch(
