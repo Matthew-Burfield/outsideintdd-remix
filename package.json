@@ -10,7 +10,7 @@
     "postinstall": "remix setup node",
     "build:css": "tailwindcss -o ./app/tailwind.css",
     "build": "cross-env NODE_ENV=production npm run build:css && remix build",
-    "dev": "cross-env NODE_ENV=development remix build && run-p dev:*",
+    "dev": "cross-env NODE_ENV=development npm run build:css && remix build && run-p dev:*",
     "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
     "dev:remix": "cross-env NODE_ENV=development remix watch",
     "dev:node": "cross-env NODE_ENV=development nodemon ./build/index.js",

@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
-import { Index, loader } from "../../routes/index";
-import * as api from "../../api";
-import type { Restaurant } from "../../routes/index";
+import { Index, loader } from "~/routes/index";
+import * as api from "~/api";
+import type { Restaurant } from "~/routes/index";
 
-jest.mock("../../api");
+jest.mock("~/api");
 const mockLoadRestaurants = api.loadRestaurants as jest.Mock;
 
 describe("RestaurantList", () => {
