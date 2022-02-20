@@ -3,6 +3,7 @@ import express from "express";
 import compression from "compression";
 import morgan from "morgan";
 import { createRequestHandler } from "@remix-run/express";
+import { server } from "~/msw/server";
 
 import * as build from "@remix-run/dev/server-build";
 
@@ -39,12 +40,12 @@ app.listen(port, () => {
   console.log(`Express server listening on port ${port}`);
 });
 
-// if (process.env.NODE_ENV === "development") {
-//   // Run mocking server
-//   server.listen({ onUnhandledRequest: "error" });
-//
-//   server.printHandlers();
-//
-//   process.once("SIGINT", server.close);
-//   process.once("SIGTERM", server.close);
-// }
+if (process.env.NODE_ENV === "development") {
+  // Run mocking server
+  server.listen({ onUnhandledRequest: "error" });
+
+  server.printHandlers();
+
+  process.once("SIGINT", server.close);
+  process.once("SIGTERM", server.close);
+}
