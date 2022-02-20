@@ -1,6 +1,7 @@
 import { useLoaderData } from "remix";
 import type { LoaderFunction } from "remix";
 import * as api from "../api";
+import { H1 } from "~/components/H1";
 
 export type Restaurant = {
   id: number;
@@ -22,13 +23,13 @@ export default function IndexLoader() {
 
 export function Index(props: Props) {
   return (
-    <>
-      <h1>Restaurants</h1>
+    <section className="m-10 p-10 shadow">
+      <H1 className="pb-10">Restaurants</H1>
       <ul>
         {props.restaurants.map((restaurant) => (
           <li key={restaurant.id}>{restaurant.name}</li>
         ))}
       </ul>
-    </>
+    </section>
   );
 }
