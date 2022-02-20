@@ -3,7 +3,7 @@ import express from "express";
 import compression from "compression";
 import morgan from "morgan";
 import { createRequestHandler } from "@remix-run/express";
-import { server } from "./mocks/server";
+import { server } from "~/msw/server";
 
 import * as build from "@remix-run/dev/server-build";
 

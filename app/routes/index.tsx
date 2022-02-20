@@ -1,5 +1,5 @@
 import { useLoaderData } from "remix";
-import type { LoaderFunction } from "remix";
+import type { LoaderFunction, ErrorBoundaryComponent } from "remix";
 import * as api from "../api";
 import { H1 } from "~/components/H1";
 
@@ -33,3 +33,12 @@ export function Index(props: Props) {
     </section>
   );
 }
+
+export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => {
+  return (
+    <section className="m-10 p-10 shadow">
+      <H1 className="pb-10">Error</H1>
+      <p>{error.message}</p>
+    </section>
+  );
+};
