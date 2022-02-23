@@ -29,7 +29,7 @@
     "remix": "^1.2.2"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.2.1",
+    "@remix-run/dev": "^1.2.2",
     "@testing-library/cypress": "^8.0.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
